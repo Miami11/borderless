@@ -15,7 +15,7 @@ class User extends \TCG\Voyager\Models\User
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','account','mobile','sex','address'
     ];
 
     /**
@@ -26,4 +26,9 @@ class User extends \TCG\Voyager\Models\User
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function orders()
+    {
+        return $this->hasMany('App\Order');
+    }
+
 }
